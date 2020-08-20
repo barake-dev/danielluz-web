@@ -26,43 +26,43 @@ if($_POST) {
     // Checking if the $_POST vars well provided, Exit if there is one missing
     if(!isset($_POST["userChecking"]) || !isset($_POST["userName"]) || !isset($_POST["userEmail"]) || !isset($_POST["userSubject"]) || !isset($_POST["userMessage"]) || !isset($_POST["userNewsletter"])) {
         
-        $output = json_encode(array('type'=>'error', 'text' => '<i class="icon ion-close-round"></i> Input fields are empty!'));
+        $output = json_encode(array('type'=>'error', 'text' => '<i class="icon ion-close-round"></i> Os campos de entrada estão vazios!'));
         die($output);
     }
 
     // Anti-spam field, if the field is not empty, submission will be not proceeded. Let the spammers think that they got their message sent with a Thanks ;-)
     if(!empty($_POST["userChecking"])) {
-        $output = json_encode(array('type'=>'error', 'text' => '<i class="icon ion-checkmark-round"></i> Thanks for your submission'));
+        $output = json_encode(array('type'=>'error', 'text' => '<i class="icon ion-checkmark-round"></i> Obrigado por se inscrever'));
         die($output);
     }
    
     // PHP validation for the fields required
     if(empty($_POST["userName"])) {
-        $output = json_encode(array('type'=>'error', 'text' => '<span><i class="icon ion-close-round"></i></span>Error on 1st field :<br>Name too short or not specified'));
+        $output = json_encode(array('type'=>'error', 'text' => '<span><i class="icon ion-close-round"></i></span>Erro no 1º campo:<br>Nome muito curto ou não especificado'));
         die($output);
     }
     
     if(!filter_var($_POST["userEmail"], FILTER_VALIDATE_EMAIL)) {
-        $output = json_encode(array('type'=>'error', 'text' => '<span><i class="icon ion-close-round"></i></span>Error on 2nd field :<br>Please enter a valid email address.'));
+        $output = json_encode(array('type'=>'error', 'text' => '<span><i class="icon ion-close-round"></i></span>Erro no 2º campo:<br>Por favor insira um endereço de e-mail válido.'));
         die($output);
     }
 
     if(empty($_POST["userSubject"])) {
-        $output = json_encode(array('type'=>'error', 'text' => '<span><i class="icon ion-close-round"></i></span>Error on 3rd field :<br>Please select the reason of your message.'));
+        $output = json_encode(array('type'=>'error', 'text' => '<span><i class="icon ion-close-round"></i></span>Erro no 3º campo:<br>Selecione o motivo da sua mensagem.'));
         die($output);
     }
 
     // Avoid too small message by changing the value of the minimum characters required. Here it's <20
     if(strlen($_POST["userMessage"])<20) {
-        $output = json_encode(array('type'=>'error', 'text' => '<span><i class="icon ion-close-round"></i></span>Error on 4th field :<br>Too short message! Take your time and write a few words.'));
+        $output = json_encode(array('type'=>'error', 'text' => '<span><i class="icon ion-close-round"></i></span>Erro no 4º campo:<br>Mensagem muito curta! Tome seu tempo e escreva algumas palavras.'));
         die($output);
     }
    
     // Proceed with PHP email
     $headers = 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type:text/html;charset=UTF-8' . "\r\n";
-    $headers .= 'From: MOON Template <noreply@yourdomain.com>' . "\r\n";
-    $headers .= 'Reply-To: '.$_POST["userEmail"]."\r\n";
+    $headers .= 'De: Site Daniel Luz <contato@danieluz.com>' . "\r\n";
+    $headers .= 'Responder a: '.$_POST["userEmail"]."\r\n";
     
     'X-Mailer: PHP/' . phpversion();
     
@@ -102,21 +102,21 @@ if($_POST) {
                                         <tr>
                                             <td width='100%' colspan='3' align='left' style='padding-bottom:0;'>
                                                 <div>
-                                                    <h2>New message</h2>
+                                                    <h2>Nova mensagem</h2>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td width='100%' align='left' style='padding-bottom:30px;'>
                                                 <div>
-                                                    <p>Hello, you've just received a new message via the contact form on your website.</p>
+                                                    <p>Olá, acaba de receber uma nova mensagem através do formulário de contato do seu site.</p>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td width='100%' align='left' style='padding-bottom:20px;'>
                                                 <div>
-                                                    <h3>From</h3>
+                                                    <h3>De</h3>
                                                     <p>$name</p>
                                                 </div>
                                             </td>
@@ -124,7 +124,7 @@ if($_POST) {
                                         <tr>
                                             <td width='100%' align='left' style='padding-bottom:20px;'>
                                                 <div>
-                                                    <h3>Email Address</h3>
+                                                    <h3>Email</h3>
                                                     <p>$email</p>
                                                 </div>
                                             </td>
@@ -132,7 +132,7 @@ if($_POST) {
                                         <tr>
                                             <td width='100%' align='left' style='padding-bottom:20px;'>
                                                 <div>
-                                                    <h3>Subject</h3>
+                                                    <h3>Assunto</h3>
                                                     <p>$reason</p>
                                                 </div>
                                             </td>
@@ -140,7 +140,7 @@ if($_POST) {
                                         <tr>
                                             <td width='100%' align='left' style='padding-bottom:20px;'>
                                                 <div>
-                                                    <h3>Message</h3>
+                                                    <h3>Mensagem</h3>
                                                     <p>$message</p>
                                                 </div>
                                             </td>
@@ -148,7 +148,7 @@ if($_POST) {
                                         <tr>
                                             <td width='100%' align='left' style='padding-bottom:0px;'>
                                                 <div>
-                                                    <h3>Wants to subscribe to your Newsletter?</h3>
+                                                    <h3>Quero assinar a sua Newsletter?</h3>
                                                     <p><strong>$newsletter</strong></p>
                                                 </div>
                                             </td>
@@ -157,7 +157,7 @@ if($_POST) {
                                 </div>
 
                                 <div style='margin-top:30px;text-align:center;color:#b3b3b3'>
-                                    <p style='font-size:12px;'>2017-2020 ThemeHelite®, All Rights Reserved.</p>
+                                    <p style='font-size:12px;'>1980-2020 Daniel Luz®, All Rights Reserved.</p>
                                 </div>
                             </td>
                         </tr>
@@ -172,11 +172,11 @@ if($_POST) {
     if(!$Mailsending) {
         
         //If mail couldn't be sent output error. Check your PHP email configuration (if it ever happens)
-        $output = json_encode(array('type'=>'error', 'text' => '<span><i class="icon ion-close-round"></i></span>Oops! Looks like something went wrong<br>Please check your PHP mail configuration.'));
+        $output = json_encode(array('type'=>'error', 'text' => '<span><i class="icon ion-close-round"></i></span>Oops! Parece que algo deu errado <br> Verifique sua configuração de e-mail do PHP.'));
         die($output);
         
     } else {
-        $output = json_encode(array('type'=>'message', 'text' => '<span><i class="icon ion-checkmark-round"></i></span><strong>Hello '.$_POST["userName"] .'!</strong><br>Your message has been sent, we will get back to you asap !'));
+        $output = json_encode(array('type'=>'message', 'text' => '<span><i class="icon ion-checkmark-round"></i></span><strong>Olá '.$_POST["userName"] .'!</strong><br>Sua mensagem foi enviada, entraremos em contato com você o mais rápido possível!'));
         die($output);
     }
 }

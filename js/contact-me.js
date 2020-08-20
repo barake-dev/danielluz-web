@@ -11,7 +11,7 @@ $(document).ready(function() {
     $("#contact-form [type='submit']").click(function(e) {
         e.preventDefault();
 
-        $('#valid-form').html('Sending <i class="fa fa-spinner fa-pulse fa-fw"></i>'); // Message displayed in the submit button during the sending
+        $('#valid-form').html('Enviando <i class="fa fa-spinner fa-pulse fa-fw"></i>'); // Message displayed in the submit button during the sending
 
         $(".block-message").addClass("").removeClass("show-block-valid show-block-error");
         
@@ -42,7 +42,7 @@ $(document).ready(function() {
 
                 output = '<div class="error-message"><p class="notify-valid">'+response.text+'</p></div>';
 
-                $('#valid-form').html('Send my Message'); // Message displayed in the submit button if an error has occured
+                $('#valid-form').html('Enviar minha mensagem'); // Message displayed in the submit button if an error has occured
 
                 $('#block-answer').addClass('show-block-error').removeClass('show-block-valid');
 
