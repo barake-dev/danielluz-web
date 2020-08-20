@@ -2,7 +2,7 @@
 if($_POST) {
 
     $to_Email = 'danisluz@gmail.com'; // Write your email here to receive the form submissions
-    $subject = 'New message from MOON'; // Write the subject you'll see in your inbox
+    $subject = 'Nova mensagem do Site Daniel'; // Write the subject you'll see in your inbox
 
     $name = $_POST["userName"];
     $email = $_POST["userEmail"];

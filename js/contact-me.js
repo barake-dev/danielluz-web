@@ -58,7 +58,7 @@ $(document).ready(function() {
                 $('#contact-form textarea').val('');
                 $('#contact-form select').val('placeholder').addClass('no-selection');
                 
-                $('#valid-form').html('Sent!'); // Message displayed in the submit button when the submission is successfull
+                $('#valid-form').html('Enviei!'); // Message displayed in the submit button when the submission is successfull
 
                 $('#block-answer').addClass('show-block-valid').removeClass('show-block-error');
 
