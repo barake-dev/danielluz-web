@@ -20,7 +20,6 @@ $(document).ready(function() {
 
         var user_name          = $('input[name=name]').val();
         var user_email         = $('input[name=email-address]').val();
-        var user_phone         = $('input[name=phone]').val();
         var user_reason        = $('select[name=reason]').val();
         var user_message       = $('textarea[name=message]').val();
         var user_newsletter    = $('input[name=newsletter]').val();
@@ -30,7 +29,6 @@ $(document).ready(function() {
             'userChecking':user_checking,
             'userName':user_name,
             'userEmail':user_email,
-            'userPhone':user_phone,
             'userSubject':user_reason,
             'userMessage':user_message,
             'userNewsletter':user_newsletter,
@@ -44,7 +42,7 @@ $(document).ready(function() {
 
                 output = '<div class="error-message"><p class="notify-valid">'+response.text+'</p></div>';
 
-                $('#valid-form').html('Enviar minha mensagem'); // Message displayed in the submit button if an error has occured
+                $('#valid-form').html('Send my Message'); // Message displayed in the submit button if an error has occured
 
                 $('#block-answer').addClass('show-block-error').removeClass('show-block-valid');
 
