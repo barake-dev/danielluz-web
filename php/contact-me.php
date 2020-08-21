@@ -144,14 +144,6 @@ if($_POST) {
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td width='100%' align='left' style='padding-bottom:0px;'>
-                                                <div>
-                                                    <h3>Quero assinar a sua Newsletter?</h3>
-                                                    <p><strong>$newsletter</strong></p>
-                                                </div>
-                                            </td>
-                                        </tr>
                                     </table>
                                 </div>
 
