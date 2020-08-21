@@ -6,8 +6,8 @@
 	$o->status = 'success';
 	echo json_encode($o);
 
-	$email_to = "myemail@email.com"; // Replace by your email address
-    $subject = 'New subscriber from iSOON'; // Write the subject you'll see in your inbox
+	$email_to = "danisluz@gmail.com"; // Replace by your email address
+    $subject = 'Novo assinante do Daniel Luz'; // Write the subject you'll see in your inbox
 	$email = $_POST["email"];
 
 	$text = "
@@ -43,7 +43,7 @@
 										<tr>
 											<td width='100%' colspan='3' align='center' style='padding-bottom:10px;'>
 												<div>
-													<h2 >Woohoo! 1 new subscriber</h2>
+													<h2 >Woohoo! 1 novo assinante</h2>
 												</div>
 											</td>
 										</tr>
@@ -51,7 +51,7 @@
 											<td width='100'>&nbsp;</td>
 											<td width='400' align='center' style='padding-bottom:5px;'>
 												<div>
-													<p >One of your visitors has just subscribed to your Newsletter, here is their email address :</p>
+													<p >Um de seus visitantes acabou de se inscrever no seu boletim informativo. Aqui está o endereço de e-mail:</p>
 												</div>
 											</td>
 											<td width='100'>&nbsp;</td>
@@ -88,7 +88,7 @@
 
 	$headers = "MIME-Version: 1.0" . "\r\n"; 
 	$headers .= "Content-type:text/html; charset=utf-8" . "\r\n";
-    $headers .= 'From: iSOON Template <noreply@yourdomain.com>' . "\r\n";
+    $headers .= 'De: Daniel Luz <contato@danieluz.com>' . "\r\n";
 
 	mail($email_to, $subject, $text, $headers);
 
